@@ -39,6 +39,13 @@ public class ClienteService {
         return clienteRepository.save(cliente);
     }
 
+    public void bloquearCliente(Long id) {
+        Cliente cliente = buscarPorId(id);
+        cliente.setStatusBloqueio(StatusBloqueio.B);
+        cliente.setLimiteCredito(java.math.BigDecimal.ZERO);
+        clienteRepository.save(cliente);
+    }
+
     public List<Cliente> listarBloqueados() {
         return clienteRepository.findByStatusBloqueio(StatusBloqueio.B);
     }

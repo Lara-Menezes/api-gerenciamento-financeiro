@@ -1,0 +1,16 @@
+C:\Projetos\Estágio- evoluir\api-gerenciamento-financeiro\fintech-pagamento\src\main\java\org\example\repository\FaturaRepository.java
+C:\Projetos\Estágio- evoluir\api-gerenciamento-financeiro\fintech-pagamento\src\main\java\org\example\dto\FaturaDTO.java
+C:\Projetos\Estágio- evoluir\api-gerenciamento-financeiro\fintech-pagamento\src\main\java\org\example\entity\StatusFatura.java
+C:\Projetos\Estágio- evoluir\api-gerenciamento-financeiro\fintech-pagamento\src\main\java\org\example\entity\Cliente.java
+C:\Projetos\Estágio- evoluir\api-gerenciamento-financeiro\fintech-pagamento\src\main\java\org\example\service\ClienteService.java
+C:\Projetos\Estágio- evoluir\api-gerenciamento-financeiro\fintech-pagamento\src\main\java\org\example\controller\ClienteController.java
+C:\Projetos\Estágio- evoluir\api-gerenciamento-financeiro\fintech-pagamento\src\main\java\org\example\config\SwaggerConfig.java
+C:\Projetos\Estágio- evoluir\api-gerenciamento-financeiro\fintech-pagamento\src\main\java\org\example\dto\ClienteDTO.java
+C:\Projetos\Estágio- evoluir\api-gerenciamento-financeiro\fintech-pagamento\src\main\java\org\example\repository\ClienteRepository.java
+C:\Projetos\Estágio- evoluir\api-gerenciamento-financeiro\fintech-pagamento\src\main\java\org\example\controller\FaturaController.java
+C:\Projetos\Estágio- evoluir\api-gerenciamento-financeiro\fintech-pagamento\src\main\java\org\example\entity\StatusBloqueio.java
+C:\Projetos\Estágio- evoluir\api-gerenciamento-financeiro\fintech-pagamento\src\main\java\org\example\controller\testeApi.java
+C:\Projetos\Estágio- evoluir\api-gerenciamento-financeiro\fintech-pagamento\src\main\java\org\example\entity\Fatura.java
+C:\Projetos\Estágio- evoluir\api-gerenciamento-financeiro\fintech-pagamento\src\main\java\org\example\FintechApplication.java
+C:\Projetos\Estágio- evoluir\api-gerenciamento-financeiro\fintech-pagamento\src\main\java\org\example\exception\GlobalException.java
+C:\Projetos\Estágio- evoluir\api-gerenciamento-financeiro\fintech-pagamento\src\main\java\org\example\service\FaturaService.java
