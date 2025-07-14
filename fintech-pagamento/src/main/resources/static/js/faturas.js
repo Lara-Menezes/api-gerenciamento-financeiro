@@ -1,3 +1,11 @@
+function formatarData(dataISO) {
+  const data = new Date(dataISO);
+  const dia = String(data.getDate()).padStart(2, '0');
+  const mes = String(data.getMonth() + 1).padStart(2, '0');
+  const ano = String(data.getFullYear()).slice(2);
+  return `${dia}/${mes}/${ano}`;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const clienteId = urlParams.get("clienteId");
@@ -20,17 +28,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         div.innerHTML = `
           <p><strong>Valor:</strong> R$ ${fatura.valor.toFixed(2)}</p>
-          <p><strong>Data de Vencimento:</strong> ${fatura.dataVencimento}</p>
+          <p><strong>Data de Vencimento:</strong> ${formatarData(fatura.dataVencimento)}</p>
           <p><strong>Status:</strong> ${
             fatura.status === "P" ? "Paga" :
             fatura.status === "A" ? "Atrasada" :
             fatura.status === "B" ? "Aberta" :
             fatura.status
           }</p>
-          <p><strong>Data de Pagamento:</strong> ${fatura.dataPagamento || "-"}</p>
+          <p><strong>Data de Pagamento:</strong> ${fatura.dataPagamento ? formatarData(fatura.dataPagamento) : "-"}</p>
           ${
             fatura.status !== "P"
-              ? `<button onclick="registrarPagamento(${fatura.id})">Pagar</button>`
+              ? `<button onclick="registrarPagamento(${fatura.id})">Registrar Pagamento</button>`
               : ""
           }
         `;
