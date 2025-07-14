@@ -28,6 +28,16 @@ public class ClienteController {
         return ResponseEntity.ok(clienteService.buscarPorId(id));
     }
 
+    @GetMapping("/buscarPorNome")
+    public ResponseEntity<List<Cliente>> buscarPorNome(@RequestParam String nome) {
+        return ResponseEntity.ok(clienteService.buscarPorNome(nome));
+    }
+
+    @GetMapping("/buscarPorCpf")
+    public ResponseEntity<Cliente> buscarPorCpf(@RequestParam String cpf) {
+        return ResponseEntity.ok(clienteService.buscarPorCpf(cpf));
+    }
+
     @PostMapping
     public ResponseEntity<Cliente> salvar(@RequestBody Cliente cliente) {
         return ResponseEntity.ok(clienteService.salvar(cliente));

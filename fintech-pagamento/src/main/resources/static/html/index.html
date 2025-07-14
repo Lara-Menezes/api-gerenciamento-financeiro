@@ -8,6 +8,42 @@
 </head>
 <body>
 <h1>Lista de Clientes</h1>
+
+<div id="acoes-clientes">
+    <button id="btn-listar-todos">Listar Todos</button>
+    <button id="btn-bloqueados">Listar Bloqueados</button>
+    <button id="btn-novo-cliente">Cadastrar Novo Cliente</button>
+</div>
+
+<div id="busca-clientes">
+    <input type="text" id="busca-id" placeholder="Buscar por ID">
+    <button onclick="buscarPorId()">Buscar</button>
+
+    <input type="text" id="busca-nome" placeholder="Buscar por Nome">
+    <button onclick="buscarPorNome()">Buscar</button>
+
+    <input type="text" id="busca-cpf" placeholder="Buscar por CPF">
+    <button onclick="buscarPorCpf()">Buscar</button>
+</div>
+
+<div id="form-cadastro" style="display: none;">
+    <h2>Novo Cliente</h2>
+    <form id="cliente-form">
+        <input type="text" id="nome" placeholder="Nome" required>
+        <input type="text" id="cpf" placeholder="CPF" required>
+        <input type="date" id="dataNascimento" required>
+        <select id="status">
+            <option value="A">Ativo</option>
+            <option value="B">Bloqueado</option>
+        </select>
+        <input type="number" id="limite" placeholder="Limite de Crédito" required step="0.01">
+        <div style="margin-top: 10px;">
+            <button type="submit">Salvar</button>
+            <button type="button" onclick="cancelarCadastro()">Cancelar</button>
+        </div>
+    </form>
+</div>
+
 <table id="tabela-clientes">
     <thead>
     <tr>

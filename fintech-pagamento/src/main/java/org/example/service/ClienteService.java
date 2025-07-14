@@ -20,9 +20,19 @@ public class ClienteService {
         return clienteRepository.findAll();
     }
 
+    public List<Cliente> buscarPorNome(String nome) {
+        return clienteRepository.findByNome(nome);
+    }
+
     public Cliente buscarPorId(Long id) {
         return clienteRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
+    }
+
+    public Cliente buscarPorCpf(String cpf) {
+        return clienteRepository.findByCpf(cpf)
+                .stream().findFirst()
+                .orElseThrow(() -> new RuntimeException("CPF não encontrado"));
     }
 
     public Cliente salvar(Cliente cliente) {

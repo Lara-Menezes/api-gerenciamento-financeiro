@@ -1,11 +1,3 @@
-function formatarData(dataISO) {
-  const data = new Date(dataISO);
-  const dia = String(data.getDate()).padStart(2, '0');
-  const mes = String(data.getMonth() + 1).padStart(2, '0');
-  const ano = String(data.getFullYear()).slice(2);
-  return `${dia}/${mes}/${ano}`;
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const clienteId = urlParams.get("clienteId");
@@ -20,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(cliente => {
       const faturas = cliente.faturas;
       const container = document.getElementById("faturas-container");
-      container.innerHTML = ""; // limpa antes
+      container.innerHTML = "";
 
       faturas.forEach(fatura => {
         const div = document.createElement("div");
@@ -51,6 +43,15 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Erro ao carregar faturas do cliente.");
     });
 });
+
+function formatarData(isoDate) {
+  const data = new Date(isoDate);
+  return data.toLocaleDateString("pt-BR", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "2-digit"
+  });
+}
 
 function registrarPagamento(faturaId) {
   fetch(`/faturas/${faturaId}/pagamento`, {
