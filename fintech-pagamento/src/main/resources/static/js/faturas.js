@@ -11,23 +11,31 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(res => res.json())
     .then(cliente => {
       const faturas = cliente.faturas;
-      const tbody = document.getElementById("faturas-body");
-      tbody.innerHTML = "";
+      const container = document.getElementById("faturas-container");
+      container.innerHTML = ""; // limpa antes
 
       faturas.forEach(fatura => {
-        const tr = document.createElement("tr");
+        const div = document.createElement("div");
+        div.classList.add("fatura");
 
-        tr.innerHTML = `
-          <td>R$ ${fatura.valor.toFixed(2)}</td>
-          <td>${fatura.dataVencimento}</td>
-          <td>${fatura.status === "P" ? "Paga" : fatura.status === "A" ? "Aberta" : "Bloqueada"}</td>
-          <td>${fatura.dataPagamento || "-"}</td>
-          <td>
-            ${fatura.status !== "P" ? `<button onclick="registrarPagamento(${fatura.id})">Pagar</button>` : ""}
-          </td>
+        div.innerHTML = `
+          <p><strong>Valor:</strong> R$ ${fatura.valor.toFixed(2)}</p>
+          <p><strong>Data de Vencimento:</strong> ${fatura.dataVencimento}</p>
+          <p><strong>Status:</strong> ${
+            fatura.status === "P" ? "Paga" :
+            fatura.status === "A" ? "Atrasada" :
+            fatura.status === "B" ? "Aberta" :
+            fatura.status
+          }</p>
+          <p><strong>Data de Pagamento:</strong> ${fatura.dataPagamento || "-"}</p>
+          ${
+            fatura.status !== "P"
+              ? `<button onclick="registrarPagamento(${fatura.id})">Pagar</button>`
+              : ""
+          }
         `;
 
-        tbody.appendChild(tr);
+        container.appendChild(div);
       });
     })
     .catch(err => {

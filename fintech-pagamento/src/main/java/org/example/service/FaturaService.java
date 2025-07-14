@@ -26,9 +26,17 @@ public class FaturaService {
 
         fatura.setDataPagamento(LocalDate.now());
         fatura.setStatus(StatusFatura.P);
-        faturaRepository.save(fatura);
 
+        if (fatura.getDataPagamento().isAfter(fatura.getDataVencimento().plusDays(3))) {
+            Cliente cliente = fatura.getCliente();
+            cliente.setStatusBloqueio(StatusBloqueio.B);
+            cliente.setLimiteCredito(BigDecimal.ZERO);
+            clienteRepository.save(cliente);
+        }
+
+        faturaRepository.save(fatura);
         return fatura;
+
     }
 
     public void atualizarFaturasAtrasadas() {
