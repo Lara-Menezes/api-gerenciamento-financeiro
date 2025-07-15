@@ -1,11 +1,8 @@
-
-import static org.mockito.Mockito.*;
-
 import java.math.BigDecimal;
 import java.util.Optional;
 
 import org.example.entity.Cliente;
-import org.example.entity.StatusBloqueio;
+import org.example.enums.StatusBloqueio;
 import org.example.repository.ClienteRepository;
 import org.example.service.ClienteService;
 

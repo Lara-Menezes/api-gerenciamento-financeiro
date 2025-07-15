@@ -1,12 +1,15 @@
 package org.example.service;
 
 import org.example.entity.Cliente;
-import org.example.entity.StatusBloqueio;
+import org.example.enums.StatusBloqueio;
 import org.example.repository.ClienteRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Lógica de negócios relacionada ao Cliente
+ */
 @Service
 public class ClienteService {
 

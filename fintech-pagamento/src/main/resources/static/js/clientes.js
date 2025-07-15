@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  carregarClientes(); // carregar todos inicialmente
+  carregarClientes();
 
   // Botões ações
   document.getElementById("btn-listar-todos").addEventListener("click", () => carregarClientes());
@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
     salvarCliente();
   });
 });
+
+ //Funções de requisição http via fetch para exibir dados do cliente no frontend
 
 function carregarClientes() {
   fetch("/clientes")

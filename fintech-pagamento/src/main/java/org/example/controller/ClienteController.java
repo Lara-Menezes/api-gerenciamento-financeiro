@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/clientes")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*") // Permite chamadas de qualquer origem
 public class ClienteController {
 
     private final ClienteService clienteService;
@@ -17,6 +17,10 @@ public class ClienteController {
     public ClienteController(ClienteService clienteService) {
         this.clienteService = clienteService;
     }
+
+    /**
+     * Endpoints HTTP da API para rotas do cliente
+     */
 
     @GetMapping
     public ResponseEntity<List<Cliente>> listarTodos() {

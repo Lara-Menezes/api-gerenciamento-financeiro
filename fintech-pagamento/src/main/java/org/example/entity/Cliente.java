@@ -1,10 +1,14 @@
 package org.example.entity;
 
 import jakarta.persistence.*;
+import org.example.enums.StatusBloqueio;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * Entidade que representa o cliente
+ */
 @Entity
 @Table(name = "cliente")
 public class Cliente {
@@ -14,7 +18,6 @@ public class Cliente {
     private Long id;
 
     private String nome;
-
     private String cpf;
 
     @Column(name = "data_nascimento")
@@ -30,6 +33,9 @@ public class Cliente {
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
     private List<Fatura> faturas;
 
+    /**
+     * Getters e Setters
+     */
     public Long getId() {
         return id;
     }

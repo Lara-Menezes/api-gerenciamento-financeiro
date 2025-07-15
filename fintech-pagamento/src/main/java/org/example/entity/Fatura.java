@@ -2,9 +2,14 @@ package org.example.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import org.example.enums.StatusFatura;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+/**
+ * Entidade que representa uma fatura
+ */
 @Entity
 @Table(name = "fatura")
 public class Fatura {
@@ -29,6 +34,9 @@ public class Fatura {
     @Enumerated(EnumType.STRING)
     private StatusFatura status;
 
+    /**
+     * Getters e Setters
+     */
     public Long getId() {
         return id;
     }

@@ -1,11 +1,8 @@
-
-import static org.mockito.Mockito.*;
-
 import java.math.BigDecimal;
 import java.util.Optional;
 
 import org.example.entity.Fatura;
-import org.example.entity.StatusFatura;
+import org.example.enums.StatusFatura;
 import org.example.repository.FaturaRepository;
 import org.example.service.ClienteService;
 import org.example.service.FaturaService;

@@ -2,12 +2,19 @@ package org.example.dto;
 
 import java.math.BigDecimal;
 
+/**
+ * Transfere dados entre o cliente (frontend) e o backend
+ */
 public class FaturaDTO {
+
     private BigDecimal valor;
     private String dataVencimento;
-    private Long ClienteId;
+    private Long clienteId;
     private String status;
 
+    /**
+     * Getters e Setters
+     */
     public BigDecimal getValor() {
         return valor;
     }
@@ -25,11 +32,11 @@ public class FaturaDTO {
     }
 
     public Long getClienteId() {
-        return ClienteId;
+        return clienteId;
     }
 
     public void setClienteId(Long clienteId) {
-        this.ClienteId = clienteId;
+        this.clienteId = clienteId;
     }
 
     public String getStatus() {

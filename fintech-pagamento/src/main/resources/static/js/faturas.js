@@ -1,5 +1,5 @@
-let todasFaturas = [];
-let clienteId = null;
+let todasFaturas = []; // Array global para armazenar as faturas do cliente
+let clienteId = null; // ID do cliente tirado da URL
 
 document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  // Requisição ds faturas do cliente pelo ID
   fetch(`/faturas/cliente/${clienteId}`)
     .then(res => res.json())
     .then(faturas => {
@@ -26,6 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+
+      // Cria o objeto da nova fatura com os valores do formulário
       const novaFatura = {
         valor: document.getElementById("valor").value,
         dataVencimento: document.getElementById("data-vencimento").value,
@@ -33,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         status: document.getElementById("status-fatura").value
       };
 
+      // Envia a fatura para o backend
       fetch("/faturas", {
         method: "POST",
         headers: {
@@ -63,9 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-// ========================
-// Funções auxiliares
-// ========================
+//Funções auxiliares e de requisição http via fetch para registrar pagamento
 
 function renderizarFaturas(faturas) {
   const container = document.getElementById("faturas-container");
