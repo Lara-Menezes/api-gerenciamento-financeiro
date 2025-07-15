@@ -61,4 +61,60 @@ h1 {
   background-color: #0056b3;
 }
 
+.botoes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.botoes button,
+.botoes-form button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #17a2b8;
+  border-radius: 6px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.botoes button:hover,
+.botoes-form button:hover {
+  background-color: #138496;
+}
+
+#form-cadastro,
+#form-fatura {
+  max-width: 500px;
+  margin: 30px auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+#form-cadastro h2,
+#form-fatura h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+#cliente-form,
+#nova-fatura-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#cliente-form input,
+#cliente-form select,
+#nova-fatura-form input,
+#nova-fatura-form select {
+  padding: 10px;
+  font-size: 14px;
+}
+
+
+
 

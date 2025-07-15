@@ -20,6 +20,17 @@ public class FaturaService {
         this.clienteRepository = clienteRepository;
     }
 
+    public Fatura criarFatura(Fatura fatura) {
+        Cliente cliente = clienteRepository.findById(fatura.getCliente().getId())
+                .orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
+
+        fatura.setCliente(cliente);
+        fatura.setStatus(StatusFatura.B); // Aberta
+        fatura.setDataPagamento(null);
+
+        return faturaRepository.save(fatura);
+    }
+
     public Fatura registrarPagamento(Long faturaId) {
         Fatura fatura = faturaRepository.findById(faturaId)
                 .orElseThrow(() -> new RuntimeException("Fatura não encontrada"));
